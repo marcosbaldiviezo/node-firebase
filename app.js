@@ -29,6 +29,21 @@ gracehop: {
 }
 });
 
+
+var uid = "QU3Thu4Z8OTTl0fMDFgnmW2D4k52"; //this can be existing user UID
+var additionalClaims = {
+   premiumAccount: true
+};
+
+firebase.auth().createCustomToken(uid, additionalClaims)
+  .then(function(customToken) {
+     // Send token back to client
+     console.log(customToken);
+  })
+  .catch(function(error) {
+     console.log("Error creating custom token:", error);
+});
+
 // Firebase
 
 
